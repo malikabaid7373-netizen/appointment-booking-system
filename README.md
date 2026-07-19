@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Appointment Booking System
 
-## Getting Started
+A bilingual appointment booking system for clinics in Saudi Arabia.
 
-First, run the development server:
+## Project Goal
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The goal of this project is to help clinics manage doctors, services, customers, and appointments through a responsive web application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Target Users
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Clinic administrators
+- Reception staff
+- Doctors
+- Customers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## MVP Features
 
-## Learn More
+### Public Website
 
-To learn more about Next.js, take a look at the following resources:
+- Arabic and English languages
+- Responsive landing page
+- Clinic services
+- Doctors listing
+- Doctor details
+- Appointment booking form
+- Contact information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Customer Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Sign up and login
+- View doctors and services
+- Book an appointment
+- View personal appointments
+- Cancel an appointment
+- Update profile
 
-## Deploy on Vercel
+### Admin Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Admin login
+- Dashboard statistics
+- Manage doctors
+- Manage services
+- View appointments
+- Update appointment status
+- Manage customers
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technology Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Supabase
+- PostgreSQL
+- Git and GitHub
+
+## Initial Project Scope
+
+This first version will focus only on clinics.
+
+Salons, gyms, and other businesses may be supported in future versions.
+
+## Project Status
+
+Currently under development.
