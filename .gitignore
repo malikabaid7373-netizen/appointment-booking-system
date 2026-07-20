@@ -39,8 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-ras-admin-source.zip
-*.responsive-backup
-*.responsive-v2-backup
-type-errors.txt
