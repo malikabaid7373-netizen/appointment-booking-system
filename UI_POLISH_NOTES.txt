@@ -1,0 +1,22 @@
+ClinicCare UI polish completed
+
+Updated:
+- Premium responsive homepage and hero section
+- Shared animated header, footer, and brand logo
+- Modern doctor search, filters, and cards
+- Improved doctor details and booking screens
+- Polished login and registration with password visibility
+- Appointment status filters, skeleton loaders, and modern cards
+- CSS-only motion, hover effects, gradients, glass panels, and accessibility focus states
+- Reduced-motion support
+
+Preserved:
+- Existing API calls
+- Authentication behavior
+- Appointment booking and cancellation logic
+- Existing routes and data models
+
+Validation:
+- npm run lint passed
+- TypeScript check passed
+- Full Next.js build could not run in the Linux sandbox because the uploaded node_modules contained Windows SWC binaries.
