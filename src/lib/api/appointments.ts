@@ -18,6 +18,7 @@ export type AppointmentResponse = {
   id: number;
   doctorId: number;
   doctorName: string;
+  doctorInitials: string;
   specialty: string;
   patientName: string;
   phone: string;
@@ -26,9 +27,21 @@ export type AppointmentResponse = {
   appointmentTime: string;
   reason: string;
   status: AppointmentStatus;
+  statusLabel: string;
+  canCancel: boolean;
   consultationFee: string;
   createdAt: string;
   updatedAt: string;
+};
+
+export type AppointmentSummary = {
+  total: number;
+  pending: number;
+  confirmed: number;
+  completed: number;
+  cancelled: number;
+  upcoming: number;
+  nextAppointment: AppointmentResponse | null;
 };
 
 function extractApiError(value: unknown): string {
@@ -133,6 +146,28 @@ export async function getMyAppointments(): Promise<
   }
 
   return [];
+}
+
+
+export async function getAppointmentSummary(): Promise<AppointmentSummary> {
+  const response = await fetch("/api/appointments/summary", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+    },
+    cache: "no-store",
+  });
+
+  const data = await readResponse(response);
+
+  if (!response.ok) {
+    throw new Error(
+      extractApiError(data) ||
+        "Could not load appointment summary.",
+    );
+  }
+
+  return data as AppointmentSummary;
 }
 
 export async function cancelAppointmentById(
