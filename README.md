@@ -1,64 +1,82 @@
-# Appointment Booking System
+# ClinicCare Frontend
 
-A bilingual appointment booking system for clinics in Saudi Arabia.
+ClinicCare is a production-style bilingual clinic appointment portfolio application built with Next.js and connected to a Django REST API.
 
-## Project Goal
+## Live demo
 
-The goal of this project is to help clinics manage doctors, services, customers, and appointments through a responsive web application.
+- Frontend: `https://appointment-booking-system-abaid-team.vercel.app`
+- API: `https://clinic-care-api-production.up.railway.app/api/`
 
-## Target Users
+## Highlights
 
-- Clinic administrators
-- Reception staff
-- Doctors
-- Customers
+- English and Arabic UI with persistent language selection
+- Full RTL/LTR switching
+- Light and dark themes with persistent preference
+- Animated ClinicCare splash experience
+- Responsive premium landing, doctor, auth, booking, dashboard, and appointment screens
+- JWT authentication through secure HttpOnly cookies
+- Protected Dashboard, My Appointments, and Booking routes
+- Guest booking redirects to Login and returns to the requested booking after authentication
+- Live doctor schedules and available appointment slots
+- Patient-owned appointment history and cancellation
+- Loading, error, empty, and success states
+- API-ready architecture with no localStorage booking data
 
-## MVP Features
+## Stack
 
-### Public Website
-
-- Arabic and English languages
-- Responsive landing page
-- Clinic services
-- Doctors listing
-- Doctor details
-- Appointment booking form
-- Contact information
-
-### Customer Features
-
-- Sign up and login
-- View doctors and services
-- Book an appointment
-- View personal appointments
-- Cancel an appointment
-- Update profile
-
-### Admin Features
-
-- Admin login
-- Dashboard statistics
-- Manage doctors
-- Manage services
-- View appointments
-- Update appointment status
-- Manage customers
-
-## Technology Stack
-
-- Next.js
+- Next.js 16
+- React 19
 - TypeScript
-- Tailwind CSS
-- Supabase
-- PostgreSQL
-- Git and GitHub
+- Tailwind CSS 4
+- Django REST Framework API
+- Railway PostgreSQL production database
+- Vercel deployment
 
-## Initial Project Scope
+## Local setup
 
-This first version will focus only on clinics.
+```powershell
+cd "C:\Users\Bismi\Desktop\Personal Projects\appointment-booking-system"
+npm install
+Copy-Item .env.example .env.local
+npm run dev
+```
 
-Salons, gyms, and other businesses may be supported in future versions.
+Local frontend: `http://localhost:3000`
 
-## Project Status
+`.env.local`:
 
-Currently under development.
+```env
+API_BASE_URL=http://127.0.0.1:8000/api
+```
+
+## Quality checks
+
+```powershell
+npm run lint
+npm run build
+```
+
+## Production environment
+
+On Vercel set:
+
+```env
+API_BASE_URL=https://clinic-care-api-production.up.railway.app/api
+```
+
+Do not commit `.env.local`.
+
+## Main flows
+
+1. Browse doctors publicly.
+2. Open a doctor profile.
+3. Booking requires authentication.
+4. Register or sign in.
+5. Return to the requested doctor booking screen.
+6. Select a live clinic date/slot and book.
+7. Track status from Dashboard / My Appointments.
+8. Cancel eligible future appointments.
+
+## Repository pairing
+
+This repository is the Next.js frontend. The Django backend lives in the separate `clinic-care-api` repository.

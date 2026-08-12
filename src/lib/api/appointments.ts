@@ -6,9 +6,7 @@ export type AppointmentStatus =
 
 export type CreateAppointmentInput = {
   doctorId: number;
-  patientName: string;
   phone: string;
-  email: string;
   appointmentDate: string;
   appointmentTime: string;
   reason: string;

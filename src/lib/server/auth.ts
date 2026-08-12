@@ -17,7 +17,7 @@ export type AuthUser = {
   id: number;
   fullName: string;
   email: string;
-  date_joined: string;
+  dateJoined: string;
 };
 
 export type BackendAuthResponse = {
