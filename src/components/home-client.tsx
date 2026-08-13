@@ -42,7 +42,7 @@ export function HomeClient({ doctors }: { doctors: Doctor[] }) {
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div className="relative z-10 fade-up">
             <div className="eyebrow"><SparklesIcon className="h-3.5 w-3.5" />{copy.home.eyebrow}</div>
-            <h1 className="hero-title mt-7 max-w-4xl text-5xl font-black leading-[0.98] sm:text-6xl lg:text-7xl">{copy.home.title}</h1>
+            <h1 className="hero-title mt-7 max-w-4xl text-[2.65rem] font-black leading-[0.98] sm:text-6xl lg:text-7xl">{copy.home.title}</h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">{copy.home.description}</p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -77,7 +77,7 @@ export function HomeClient({ doctors }: { doctors: Doctor[] }) {
                         </div>
                       </div>
                     </div>
-                    <div className="mt-5 grid grid-cols-2 gap-3">
+                    <div className="mt-5 grid grid-cols-1 gap-3 min-[390px]:grid-cols-2">
                       <div className="rounded-2xl border border-white/[0.06] bg-white/[0.035] p-4"><div className="flex items-center gap-2 text-xs font-semibold text-slate-500"><ClockIcon className="h-4 w-4 text-sky-400" />{copy.home.experience}</div><p className="mt-2 text-lg font-bold">{featuredDoctor.experience} {copy.common.years}</p></div>
                       <div className="rounded-2xl border border-white/[0.06] bg-white/[0.035] p-4"><div className="flex items-center gap-2 text-xs font-semibold text-slate-500"><CalendarIcon className="h-4 w-4 text-emerald-400" />{copy.home.consultation}</div><p className="mt-2 text-lg font-bold text-emerald-300">{featuredDoctor.consultationFee} {copy.common.sar}</p></div>
                     </div>
@@ -86,7 +86,7 @@ export function HomeClient({ doctors }: { doctors: Doctor[] }) {
                 ) : <div className="py-12 text-center text-slate-500">{copy.doctors.noDoctors}</div>}
               </div>
 
-              <div className="mt-5 grid grid-cols-3 gap-3">
+              <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
                 <div className="stat-mini"><p>{doctors.length}</p><span>{copy.home.doctors}</span></div>
                 <div className="stat-mini"><p>{specialtiesCount}</p><span>{copy.home.specialties}</span></div>
                 <div className="stat-mini"><p>24/7</p><span>{copy.home.availability}</span></div>

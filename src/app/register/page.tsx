@@ -73,7 +73,7 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between gap-4 text-xs text-slate-500"><span>{copy.auth.minChars}</span>{password && confirmPassword && <span className={password === confirmPassword ? "text-emerald-400" : "text-amber-300"}>{password === confirmPassword ? copy.auth.match : copy.auth.differ}</span>}</div>
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500"><span>{copy.auth.minChars}</span>{password && confirmPassword && <span className={password === confirmPassword ? "text-emerald-400" : "text-amber-300"}>{password === confirmPassword ? copy.auth.match : copy.auth.differ}</span>}</div>
 
         <button type="submit" disabled={isSubmitting} className="primary-button w-full py-4">{isSubmitting ? <><span className="button-spinner" />{copy.auth.creating}</> : <>{copy.auth.createButton}<ArrowRightIcon className={`h-4 w-4 ${isRtl ? "rotate-180" : ""}`} /></>}</button>
         <p className="text-center text-sm text-slate-400">{copy.auth.hasAccount} <Link href="/login" onClick={(event) => { const next = new URLSearchParams(window.location.search).get("next"); if (next) { event.preventDefault(); router.push(`/login?next=${encodeURIComponent(next)}`); } }} className="font-bold text-emerald-400 transition hover:text-emerald-300">{copy.common.login}</Link></p>

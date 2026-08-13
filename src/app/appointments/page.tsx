@@ -103,9 +103,9 @@ export default function AppointmentsPage() {
             <h1 className="hero-title mt-5 text-4xl font-black tracking-tight sm:text-6xl">{copy.appointments.title}</h1>
             <p className="mt-4 max-w-2xl leading-7 text-slate-400">{copy.appointments.description}</p>
           </div>
-          <div className="flex gap-3 fade-up [animation-delay:80ms]">
-            <button type="button" onClick={() => void loadAppointments()} disabled={isLoading} className="secondary-button"><RefreshIcon className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`} />{copy.appointments.refresh}</button>
-            <Link href="/doctors" className="primary-button">{copy.appointments.bookNew}<ArrowRightIcon className={`h-4 w-4 ${isRtl ? "rotate-180" : ""}`} /></Link>
+          <div className="grid w-full grid-cols-1 gap-3 fade-up [animation-delay:80ms] sm:flex sm:w-auto">
+            <button type="button" onClick={() => void loadAppointments()} disabled={isLoading} className="secondary-button w-full sm:w-auto"><RefreshIcon className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`} />{copy.appointments.refresh}</button>
+            <Link href="/doctors" className="primary-button w-full sm:w-auto">{copy.appointments.bookNew}<ArrowRightIcon className={`h-4 w-4 ${isRtl ? "rotate-180" : ""}`} /></Link>
           </div>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function AppointmentsPage() {
             <div className="mt-7 grid gap-5 lg:grid-cols-2">
               {filteredAppointments.map((appointment, index) => (
                 <article key={appointment.id} className="glass-card card-hover relative overflow-hidden rounded-[1.75rem] p-5 fade-up sm:p-6" style={{ animationDelay: `${Math.min(index, 6) * 60}ms` }}>
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-4 min-[430px]:flex-row min-[430px]:items-start min-[430px]:justify-between">
                     <div className="flex min-w-0 items-start gap-4">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 to-emerald-400 font-black text-slate-950">{appointment.doctorInitials}</div>
                       <div className="min-w-0"><p className="text-sm font-bold text-emerald-400">{localizeSpecialty(appointment.specialty, locale)}</p><h2 className="mt-1 truncate text-xl font-black">{appointment.doctorName}</h2></div>
